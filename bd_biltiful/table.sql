@@ -82,8 +82,6 @@ CONSTRAINT FK_codigo_barra_item_venda FOREIGN KEY (codigo_barra) REFERENCES tb_p
 )
 GO
 
-drop table tb_item_venda
-
 CREATE TABLE tb_compra(
 id_compra			NUMERIC(5) IDENTITY(1,1) NOT NULL,
 data_compra			DATETIME DEFAULT getdate(),
