@@ -55,8 +55,6 @@ CONSTRAINT FK_cpf_cliente_risco FOREIGN KEY (cpf_cliente) REFERENCES tb_cliente 
 )
 GO
 
-drop table tb_risco
-
 CREATE TABLE tb_bloqueado(
 cnpj_fornecedor NVARCHAR(14) NOT NULL
 CONSTRAINT FK_cnpj_fornecedor_bloqueado FOREIGN KEY (cnpj_fornecedor) REFERENCES tb_fornecedor(cnpj_fornecedor)
@@ -127,9 +125,6 @@ CONSTRAINT FK_id_mat_prima_item_producao FOREIGN KEY (id_mat_prima) REFERENCES t
 )
 GO
 
-
---drop database biltiful
-
 --insert into tb_fornecedor (cnpj_fornecedor, razao_social, data_abertura)
 --values
 --		('16410965000192', '5by5', '30/06/2016');
@@ -142,17 +137,3 @@ GO
 --		select convert(varchar, data_abertura, 3)  from tb_fornecedor
 --		select
 --		 getdate()
-
-select * from tb_cliente
-select * from tb_fornecedor
-select * from tb_produto
-select * from tb_materia_prima
-select * from tb_risco
-select * from tb_venda
-select * from tb_item_venda
-select * from tb_bloqueado
-
-select cpf_cliente from tb_risco
-where cpf_cliente = '3'
-
-select codigo_barra, nome_produto, valor_venda, convert(varchar,ultima_venda, 103), convert(varchar, data_cadastro, 103), situacao_produto from tb_produto where nome_produto = 'Batom'
